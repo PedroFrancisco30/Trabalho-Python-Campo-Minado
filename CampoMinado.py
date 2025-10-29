@@ -1,15 +1,3 @@
-"""B) JOGO DE CAMPO MINADO
-Jogo de campo minado contra o computador
-O jogador indica o tamanho do campo minado (no maximo 10 x 10), bem como o
-número de minas a serem escondidas
-O computador esconde a quantidade de minas selecionadas aleatoriamente dentro do
-campo estabelecido e marca todas as posições com o símbolo '*'
-Durante cada tentativa o jogador pode:
-marcar uma posição como mina (ficando marcada com a letra 'M')
-abrir uma posição (ficando marcada com a quantidade de minas vizinhas nas 8
-posições vizinhas)
-O jogador perde se abrir uma posição que contenha uma mina
-O jogador vence se conseguir marcar com a letra 'M' todas as posições corretas"""
 import random
 
 def mostrar_mapa(mapa):
@@ -102,16 +90,7 @@ def conferir_vitoria_por_abrir(campo_real, campo_visivel):
                 return False # Jogo não acabou
     
     return True
-
-"""def criando_campo():
-    campo_falso = []
     
-    for i in range(linhas):
-        linha = []
-        for j in range(colunas):
-            linha.append('*')
-        campo_falso.append(linha)"""
-                
 while True:
 
     try:
@@ -170,10 +149,6 @@ for i in range(linhas):
 
 minas_aleatorias(campo,qtd_bombas,'#')
 
-#Debbug     
-#print("---Campo Minado Real---")     
-#mostrar_mapa(campo)     
-     
 print(" ")     
 print("---Campo Minado---")
 mostrar_mapa(campo_falso)
@@ -191,8 +166,6 @@ while jogo:
     except ValueError:
         print("Digite apenas numeros")
         continue
-    
-    
     match opcao:
 
         case 1:
@@ -244,7 +217,6 @@ while jogo:
         case _:
             print("Opcao Invalida")
                 
-        
     vitoria_marcacao = conferir_bomba(campo, campo_falso)
     vitoria_abertura = conferir_vitoria_por_abrir(campo, campo_falso)
 
@@ -255,7 +227,3 @@ while jogo:
         print("---------------------------------")
         mostrar_mapa(campo) 
         break 
-
-
-    
-    
