@@ -37,6 +37,7 @@ def minas_aleatorias(mapa,qtd_minas,simbolo = '#'):
             colocadas += 1
             
 def contando_minas_vizinhas(mapa,lin,col):
+    """Contando as minas em volta da posição clicada"""
     linhas = len(mapa)
     colunas = len(mapa[0])
     contagem = 0
@@ -50,6 +51,7 @@ def contando_minas_vizinhas(mapa,lin,col):
     return contagem
 
 def abrindo_casas(campo_visivel, campo_real, lin, col):
+    """Abrindo as casas perto da posição clicada"""
     linhas = len(campo_real)
     colunas = len(campo_real[0])
 
